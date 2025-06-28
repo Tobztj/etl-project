@@ -1,0 +1,38 @@
+{
+    "policy_id": {
+        "type": "string",
+        "pattern": "POL-\\d+"
+    },
+    "customer_id": {
+        "type": "string",
+        "pattern": "CUS-\\d+"
+    },
+    "event_type": {
+        "type": "string",
+        "pattern": "[A-Za-z]+"
+    },
+    "event_timestamp": {
+        "type": "string",
+        "pattern": "\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d+Z"
+    },
+    "policy_type": {
+        "type": "string",
+        "required_keys": [
+            "type",
+            "brand"
+        ]
+    },
+    "premium_amount": {
+        "type": "number"
+    },
+    "coverage_amount": {
+        "type": "number"
+    },
+    "age_of_insured": {
+        "type": "integer"
+    },
+    "region": {
+        "type": "string",
+        "pattern": "[A-Za-z]+"
+    }
+}

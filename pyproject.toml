@@ -1,0 +1,20 @@
+[project]
+name = "etl-project"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Oluwatobi Jones",email = "tobijones9@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "pandas (>=2.2.3,<3.0.0)",
+    "pyodbc (>=5.2.0,<6.0.0)",
+]
+
+[tool.poetry]
+packages = [{include = "etl_project", from = "app"}]
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
