@@ -11,7 +11,7 @@ def create_database(database_name, connection):
                     END
                 ELSE
                     BEGIN
-                        CREATE DATABASE EsureDb;
+                        CREATE DATABASE ProjectDb;
                         PRINT 'Database Created'
                     END;
         """

@@ -13,10 +13,10 @@ This project is focused on developing an ETL (Extract, Transform, Load) pipeline
 1. **Clone the repository** (if you haven't already):
     ```bash
     git clone <repo-url>
-    cd esure_project
+    cd etl-project
     ```
 
-2. **Open terminal at the root of this project (`esure_project`) and set up your virtual environment:**
+2. **Open terminal at the root of this project (`etl-project`) and set up your virtual environment:**
     ```bash
     # To make Poetry create a .venv/ folder in the project folder
     poetry config virtualenvs.in-project true
@@ -51,8 +51,8 @@ This project is focused on developing an ETL (Extract, Transform, Load) pipeline
 
 Before running the ETL pipeline, you need to fill out the required variables in the configuration file.
 
-1. **Locate the config file:**  
-   The configuration file is typically found at `esure_project/app/config/config.py` or `config.yaml` (update this path if your config is elsewhere).
+1. **Locate the config file:**
+   The configuration file is typically found at `etl-project/app/config/config.py` or `config.yaml` (update this path if your config is elsewhere).
 
 2. **Edit the following variables as needed:**
     - `DRIVER`: ODBC driver for SQL Server (e.g., `{ODBC Driver 17 for SQL Server}`)
@@ -65,7 +65,7 @@ Before running the ETL pipeline, you need to fill out the required variables in 
     ```python
     DRIVER = '{ODBC Driver 17 for SQL Server}'
     SERVER = 'localhost\\SQLEXPRESS'
-    DATABASE = 'EsureDB'
+    DATABASE = 'ProjectDB'
     USERNAME = 'your_username'
     PASSWORD = 'your_password'
     ```
@@ -99,7 +99,7 @@ Before running the ETL pipeline, you need to fill out the required variables in 
 ## Project Structure
 
 ```
-esure_project/
+etl-project/
 │
 ├── app/
 │   ├── Extraction/
