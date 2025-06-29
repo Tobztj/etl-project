@@ -10,9 +10,7 @@ requires-python = ">=3.13"
 dependencies = [
     "pandas (>=2.2.3,<3.0.0)",
     "pyodbc (>=5.2.0,<6.0.0)",
-    "flake8 (>=7.3.0,<8.0.0)",
-    "pylint (>=3.3.7,<4.0.0)",
-    "sqlfluff (>=3.4.1,<4.0.0)",
+    "pre-commit (>=4.2.0,<5.0.0)",
 ]
 
 [tool.poetry]
@@ -21,3 +19,43 @@ packages = [{include = "etl_project", from = "app"}]
 [build-system]
 requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
+
+# Python linting and formatting tools configuration
+[tool.black]
+line-length = 88
+target-version = ['py313']
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+    # directories
+    \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+)/
+'''
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+line_length = 88
+known_first_party = ["app", "main_etl"]
+sections = ["FUTURE", "STDLIB", "THIRDPARTY", "FIRSTPARTY", "LOCALFOLDER"]
+
+[tool.pylint.messages_control]
+disable = [
+    "C0111",  # missing-docstring
+    "C0103",  # invalid-name
+    "R0903",  # too-few-public-methods
+    "W0613",  # unused-argument
+    "R0913",  # too-many-arguments
+]
+
+[tool.pylint.format]
+max-line-length = 88
